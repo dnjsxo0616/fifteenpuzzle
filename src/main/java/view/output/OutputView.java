@@ -4,7 +4,8 @@ import view.contants.ConstantsMessage;
 
 public class OutputView {
     public static void println(ConstantsMessage constantsMessage) {
-        System.out.println(constantsMessage.getMessage());
+        System.out.print(constantsMessage.getMessage());
+        printNewLine();
     }
 
     public static void printNewLine() {
