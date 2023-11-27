@@ -7,6 +7,12 @@ public class PlayPuzzle {
         puzzle = board;
     }
 
+    private static void changeNumber(int[] inputPositions, int[] emptyPositions) {
+        int temp = puzzle[inputPositions[0]][inputPositions[1]];
+        puzzle[inputPositions[0]][inputPositions[1]] = puzzle[emptyPositions[0]][emptyPositions[1]];
+        puzzle[emptyPositions[0]][emptyPositions[1]] = temp;
+    }
+
     private static int[] findInputPosition(int input) {
         for (int i = 0; i < puzzle.length; i++) {
             for (int j = 0; j < puzzle[i].length; j++) {
