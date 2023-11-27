@@ -17,4 +17,8 @@ public enum ConstantsMessage {
     public String getMessage() {
         return message;
     }
+
+    public String getFormattedMessage(int count) {
+        return String.format(message, count);
+    }
 }

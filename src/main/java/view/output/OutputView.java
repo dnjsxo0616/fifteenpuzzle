@@ -27,4 +27,8 @@ public class OutputView {
     public static void print(String message) {
         System.out.println(message);
     }
+
+    public static void println(ConstantsMessage constantsMessage, int count) {
+        System.out.println(constantsMessage.getFormattedMessage(count));
+    }
 }
