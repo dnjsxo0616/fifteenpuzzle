@@ -7,6 +7,14 @@ public class PlayPuzzle {
         puzzle = board;
     }
 
+    public void moveNumber(int input) {
+        int[] inputPositions = findInputPosition(input);
+        int[] emptyPositions = findEmptyPosition();
+        checkPossible(inputPositions, emptyPositions);
+
+        changeNumber(inputPositions, emptyPositions);
+    }
+
     private static void changeNumber(int[] inputPositions, int[] emptyPositions) {
         int temp = puzzle[inputPositions[0]][inputPositions[1]];
         puzzle[inputPositions[0]][inputPositions[1]] = puzzle[emptyPositions[0]][emptyPositions[1]];
