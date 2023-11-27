@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Arrays;
+
 public class PlayPuzzle {
     private static int[][] puzzle;
 
@@ -50,4 +52,18 @@ public class PlayPuzzle {
         }
     }
 
+    public int[][] getPuzzle() {
+        return puzzle;
+    }
+
+    public boolean checkPuzzle() {
+        int[][] checkBoard = new int[][]{
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 0}
+        };
+
+        return Arrays.deepEquals(puzzle, checkBoard);
+    }
 }
