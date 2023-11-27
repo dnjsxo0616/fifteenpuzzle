@@ -1,9 +1,11 @@
 package domain;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayPuzzleTest {
@@ -60,5 +62,31 @@ class PlayPuzzleTest {
 
         assertThrows(IllegalArgumentException.class, () -> noEmptyPlayPuzzle.moveNumber(3),
                 "빈칸이 존재하지 않습니다.");
+    }
+
+    @Test
+    @DisplayName("정답_테스트")
+    void checkPuzzle() {
+        PlayPuzzle PlayPuzzle = new PlayPuzzle(new int[][]{
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 0}
+        });
+
+        assertThat(playPuzzle.checkPuzzle()).isTrue();
+    }
+
+    @Test
+    @DisplayName("정답_오류_테스트")
+    void checkPuzzleFail() {
+        PlayPuzzle noEmptyPlayPuzzle = new PlayPuzzle(new int[][]{
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 12, 11},
+                {13, 14, 15, 0}
+        });
+
+        assertThat(playPuzzle.checkPuzzle()).isFalse();
     }
 }
