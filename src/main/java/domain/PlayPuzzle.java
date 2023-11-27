@@ -29,4 +29,11 @@ public class PlayPuzzle {
         throw new IllegalArgumentException("빈칸이 존재하지 않습니다.");
     }
 
+    private static void checkPossible(int[] pos1, int[] pos2) {
+        int gap = Math.abs(pos1[0] - pos2[0]) + Math.abs(pos1[1] - pos2[1]);
+        if (!(gap == 1)) {
+            throw new IllegalArgumentException("유요한 위치가 아닙니다.");
+        }
+    }
+
 }
