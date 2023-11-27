@@ -41,5 +41,10 @@ class PlayPuzzleTest {
                 "유효한 위치가 아닙니다.");
     }
 
-
+    @Test
+    @DisplayName("유효하지_않은_숫자_테스트")
+    void validNumber() {
+        assertThrows(IllegalArgumentException.class, () -> playPuzzle.moveNumber(16),
+                "유효한 숫자가 아닙니다.");
+    }
 }
